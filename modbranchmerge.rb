@@ -17,6 +17,7 @@ def mod
 end
 
 def commit
+  sleep(1)
   system("git commit -am '.'")
 end
 
