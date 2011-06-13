@@ -41,8 +41,8 @@ def modbranchmerge(name,many)
     commit
     checkout(name)
   end
-  branches.reverse!
-  branches.each do |b|
+  sleep(1)
+  branches.reverse.each do |b|
     checkout(b)
     File.open(b,'a+') {|f| f.write(Time.now)}
     system("git add .")
