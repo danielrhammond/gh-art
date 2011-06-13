@@ -61,4 +61,4 @@ def modbranchmerge(name,many)
   
   
 end
-modbranchmerge("master",100)
+modbranchmerge("master",25)
