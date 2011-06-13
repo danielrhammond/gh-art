@@ -39,7 +39,6 @@ def modbranchmerge(name,many)
     File.open(b,'a+') {|f| f.write(Time.now)}
     system("git add .")
     commit
-    modbranchmerge(b,rand(5)) if rand < 0.25
     checkout(name)
   end
   checkout(name)
@@ -51,4 +50,4 @@ def modbranchmerge(name,many)
     delete(b)
   end
 end
-modbranchmerge("master",5)
+modbranchmerge("master",10)
