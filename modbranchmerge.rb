@@ -41,6 +41,13 @@ def modbranchmerge(name,many)
     commit
     checkout(name)
   end
+  branches.reverse.each do |b|
+    checkout(b)
+    File.open(b,'a+') {|f| f.write(Time.now)}
+    system("git add .")
+    commit
+    checkout(name)    
+  end
   checkout(name)
   File.open("data2",'a+') {|f| f.write(Time.now)}
   commit
@@ -49,5 +56,7 @@ def modbranchmerge(name,many)
     commit
     delete(b)
   end
+  
+  
 end
 modbranchmerge("master",10)
